@@ -1,13 +1,47 @@
 body {
-    background-color: black;
+    
+    background-color: white;
+    text-align: center;
+    margin: 0px;
+    overflow: hidden;
+}
+
+.body1 {
+    background-color: white;
+    margin-top: 50px;
+    text-align: center;
+    font-size: 80px;
+    color: black;
+}
+
+.body2 {
+    background-color: white;
     text-align: left;
+    font-size: 50px;
+    color: black;
+}
+
+.header {
+    background-color: black;
+    text-align: center;
+    font-size: 100px;
+    color: white;   
+}
+
+button {
+    margin-top: 50px;
+    margin-left: 150px;
+    background-color: black;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: black;
+    border-width: 4px;
+    width: 300px;
+    height: 80px;
     font-size: 50px;
     color: white;
 }
 
-.header {
-    background-color: white;
-    text-align: center;
-    font-size: 100px;
-    color: black;   
-}
+button:hover{
+    background-color: rgba(0, 0, 0, 0);
+    color: black;
