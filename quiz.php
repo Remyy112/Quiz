@@ -29,6 +29,13 @@
                 for($i=0; $i<count($rows); $i++){
                     echo "<button>".$rows[$i]["answers"]."</button><br>";
                 }
+        
+            <form method = "POST">
+                <input type="hidden" name="question" value="'.$id."/>
+                <input type="checkbox" name=""/>
+                <input type="sumbit"/
+            </form>
+
         ?>
     </div>
 </body>
