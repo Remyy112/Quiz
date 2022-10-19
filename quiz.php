@@ -26,15 +26,13 @@
             $con = new mysqli("127.0.0.1", "root", "", "quiz");
             $res = $con->query("SELECT `answers` FROM `answers` JOIN questions_has_answers ON questions_has_answers.answers_id = id WHERE questions_has_answers.questions_id = ".$numerPytania.";");
                 echo '<form method = "POST">';
-                echo '<input type="hidden" name="question" value="'.$id.'"/>';
+                echo '<input type="hidden" name="question" value="'.$numerPytania.'"/>';
             $rows = $res->fetch_all(MYSQLI_ASSOC);
                 for($i=0; $i<count($rows); $i++){
 //                  echo "<button>".$rows[$i]["answers"]."</button><br>";
                     echo '<label><input type="checkbox" name="odpowiedz"/>'.$rows[$i]["answers"].'</label>';
                 }
-    
                 echo '<input type="sumbit"/>';
-            </form>
         ?>
     </div>
 </body>
