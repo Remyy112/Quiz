@@ -28,7 +28,7 @@ body {
     color: white;   
 }
 
-button {
+input {
     margin: 15px;
     height: auto;
     width: auto;
@@ -41,7 +41,7 @@ button {
     color: white;
 }
 
-button:hover{
+input:hover{
     background-color: rgba(0, 0, 0, 0);
     color: black;
 }
