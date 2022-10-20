@@ -29,10 +29,9 @@
                 echo '<input type="hidden" name="question" value="'.$numerPytania.'"/>';
             $rows = $res->fetch_all(MYSQLI_ASSOC);
                 for($i=0; $i<count($rows); $i++){
-//                  echo "<button>".$rows[$i]["answers"]."</button><br>";
                     echo '<label><input type="checkbox" name="odpowiedz"/>'.$rows[$i]["answers"].'</label>';
                 }
-                echo '<input type="sumbit"/>';
+                echo '<input type="submit"/>';
         ?>
     </div>
 </body>
