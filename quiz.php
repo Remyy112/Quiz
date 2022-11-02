@@ -24,21 +24,20 @@
     <div class="body2">
         <?php
             $con = new mysqli("127.0.0.1", "root", "", "quiz");
-            $res = $con->query("SELECT `answers` FROM `answers` JOIN questions_has_answers ON questions_has_answers.answers_id = id WHERE questions_has_answers.questions_id = ".$numerPytania.";");
+            $res = $con->query("SELECT `answers`, `id` FROM `answers` JOIN questions_has_answers ON questions_has_answers.answers_id = id WHERE questions_has_answers.questions_id = ".$numerPytania.";");
                 echo '<form method = "POST">';
                 echo '<input type="hidden" name="question" value="'.$numerPytania.'"/>';
             $rows = $res->fetch_all(MYSQLI_ASSOC);
                 for($i=0; $i<count($rows); $i++){
-                    echo '<label><input type="checkbox" name="odpowiedz"/>'.$rows[$i]["answers"].'</label>';
+                    echo '<label><input type="checkbox" name="Odpowiedz[]" value='.$rows[$i]["id"].'>'.$rows[$i]["answers"].'</label>';
                 }
                 echo '<input type="submit"/>';
-            print_r($_POST["Odpowiedz"]);
         
             for($i=0; $i<count($_POST["Odpowiedz"]); $i++){
                     $res = $con->query("SELECT `correct` FROM `questions_has_answers` WHERE `answers_id`= ".$_POST["Odpowiedz"][$i].";");
                     $rows = $res->fetch_all(MYSQLI_ASSOC);
                     for($l=0; $l<count($rows); $l++){
-                        echo $rows[$l]["correct"]."<br>";
+                        echo "<br>".$rows[$l]["correct"]."<br>";
             }
             }
         ?>
